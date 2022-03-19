@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STEAM - Gamers Heaven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!--Add a div container -->
+
+      <div class="responsive_header_content">
+        <div class="responsive_header_logo">
+          <a
+            href="https://store.steampowered.com/?snr=1_4_4__global-responsive-menu"
+          >
+            <img
+              src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_logo.png"
+              height="36"
+              alt="STEAM"
+            />
+          </a>
+        </div>
+
+        <h3 id="displayTitle">Gamers heaven</h3>
+
+        <div class="nav_links">
+          <li>
+            <a
+              href="https://store.steampowered.com/"
+              style="text-decoration: none"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://store.steampowered.com/search/?filter=topsellers"
+              style="text-decoration: none"
+              >Trending</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://store.steampowered.com/about/"
+              style="text-decoration: none"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a href="https://steamcommunity.com/" style="text-decoration: none"
+              >Community</a
+            >
+          </li>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="search_area">
+        <div id="store_search">
+          <form name="searchForm">
+            <div class="searchbox">
+              <input
+                id="searchForm"
+                name="searchForm"
+                type="text"
+                class="default"
+                placeholder="search"
+                size="22"
+                maxlength="64"
+              />
+              <div id="store_search_link">
+                <img
+                  src="https://store.cloudflare.steamstatic.com/public/images/blank.gif"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="category">
+            <ul class="categoryGroup" id="category-list"></ul>
+          </div>
+          <div class="category">
+            <ul class="categoryGroup" id="tags-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="showing_game" id="display"></div>
+    </main>
+    <footer></footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
 
