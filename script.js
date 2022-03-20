@@ -277,7 +277,7 @@ const renderDetail = (inputdata) => {
     Popular user-defined tags for this product:
     <div class="tags">
     <div class="tag">${inputdata.data.steamspy_tags
-      .map((item) => "<a>" + item + "</a>")
+      .map((item) => '<button class="tag-name">' + item + "</button>")
       .join("")}</div>
     </div>
     </div>
@@ -285,6 +285,8 @@ const renderDetail = (inputdata) => {
     </div>
     `;
   display.appendChild(newDiv);
+  const tagLine = document.querySelectorAll(".tag-name");
+  tagLine.forEach((tagLine) => tagLine.addEventListener("click", filterByTag));
 };
 
 async function singleGame(e) {
