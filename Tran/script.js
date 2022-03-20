@@ -2,19 +2,15 @@ let loading = false;
 const API_KEY = "60b77d80b6msh38935893ac98d64p18f42fjsn3bb96f0430a1";
 let inputGenres = "";
 let inputTag = "";
-let baseURL = "https://cs-steam-api.herokuapp.com/games?limit=48";
+let baseURL = "https://cs-steam-api.herokuapp.com/games";
 const display = document.querySelector("#display");
 const displayTitle = document.querySelector("#displayTitle");
 
 const getAllGameData = async () => {
-  if (loading) return;
-  display.innerHTML = `<div class="loader"> Loading ...</div>`;
   try {
-    loading = true;
     const url = `${baseURL}`;
     const res = await fetch(url);
     const gamedata = await res.json();
-    loading = false;
     return gamedata;
   } catch (err) {
     console.log("err", err);
@@ -22,21 +18,16 @@ const getAllGameData = async () => {
 };
 
 const onLoad = async () => {
-  displayTitle.innerHTML = `Gamers Heaven`;
   renderGames(await getAllGameData());
 };
 onLoad();
 
 const getGameByGenres = async (inputGenres) => {
-  if (loading) return;
-  display.innerHTML = `<div class="loader"> Loading ...</div>`;
   try {
-    loading = true;
-    const url = `${baseURL}&genres=${inputGenres}`;
+    const url = `${baseURL}?genres=${inputGenres}`;
     const res = await fetch(url);
     const gamedata = await res.json();
     console.log("data", gamedata);
-    loading = false;
     return gamedata;
   } catch (err) {
     console.log("err", err);
@@ -44,15 +35,11 @@ const getGameByGenres = async (inputGenres) => {
 };
 
 const getGameByTag = async (inputTag) => {
-  if (loading) return;
-  display.innerHTML = `<div class="loader"> Loading ...</div>`;
   try {
-    loading = true;
-    const url = `${baseURL}&steamspy_tags=${inputTag}`;
+    const url = `${baseURL}?steamspy_tags=${inputTag}`;
     const res = await fetch(url);
     const gamedata = await res.json();
     console.log("data", gamedata);
-    loading = false;
     return gamedata;
   } catch (err) {
     console.log("err", err);
@@ -60,15 +47,11 @@ const getGameByTag = async (inputTag) => {
 };
 
 const getGameBySearch = async (inputSearch) => {
-  if (loading) return;
-  display.innerHTML = `<div class="loader"> Loading ...</div>`;
   try {
-    loading = true;
-    const url = `${baseURL}&q=${inputSearch}`;
+    const url = `${baseURL}?q=${inputSearch}`;
     const res = await fetch(url);
     const gamedata = await res.json();
     console.log("data", gamedata);
-    loading = false;
     return gamedata;
   } catch (err) {
     console.log("err", err);
@@ -102,7 +85,7 @@ function renderGames(inputdata) {
     />
     <div class="game_info">
     <p>${data.name}</p>
-    <p>$${data.price}</p>
+    <p>${data.price}</p>
     </div>
     </div>
     </div>`;

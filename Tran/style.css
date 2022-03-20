@@ -153,21 +153,11 @@ background: linear-gradient(to top, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ 
   border-top: 2px solid rgba(253, 0, 139, 0.925);
   cursor: pointer;
 }
-
-
 main #store_search .category ul li {
   padding-bottom: /*1em; */ /*4em; */ 2em;
   display: flex;
   position: relative;
   justify-content: flex-basis;
-}
-
-.group-title{
-align-self: center;
-display: flex;
-justify-content: center;
-color: black;
-font-size: larger;
 }
 
 main #store_search .category li:hover {
@@ -472,4 +462,3 @@ background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, 
     transform: rotate(360deg);
   }
 }
-
