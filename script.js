@@ -1,10 +1,12 @@
 let loading = false;
-const API_KEY = "60b77d80b6msh38935893ac98d64p18f42fjsn3bb96f0430a1";
 let inputGenres = "";
 let inputTag = "";
 let baseURL = "https://cs-steam-api.herokuapp.com/games?limit=48";
 const display = document.querySelector("#display");
 const displayTitle = document.querySelector("#displayTitle");
+
+//Functions to get Data from API Back End
+//1. Get All Game in General
 
 const getAllGameData = async () => {
   if (loading) return;
@@ -21,11 +23,7 @@ const getAllGameData = async () => {
   }
 };
 
-const onLoad = async () => {
-  displayTitle.innerHTML = `Gamers Heaven`;
-  renderGames(await getAllGameData());
-};
-onLoad();
+// 2. Get games filter by genres (category) when user click in category name
 
 const getGameByGenres = async (inputGenres) => {
   if (loading) return;
@@ -43,6 +41,8 @@ const getGameByGenres = async (inputGenres) => {
   }
 };
 
+//2. Get Game by tag when user click in tag name
+
 const getGameByTag = async (inputTag) => {
   if (loading) return;
   display.innerHTML = `<div class="loader"> Loading ...</div>`;
@@ -58,6 +58,8 @@ const getGameByTag = async (inputTag) => {
     console.log("err", err);
   }
 };
+
+//3. Get games data when user search by name:
 
 const getGameBySearch = async (inputSearch) => {
   if (loading) return;
@@ -75,6 +77,7 @@ const getGameBySearch = async (inputSearch) => {
   }
 };
 
+//4. get data of single Game when user click in any games
 const getSingleGame = async (appID) => {
   try {
     const url = `https://cs-steam-api.herokuapp.com/single-game/${appID}`;
@@ -87,7 +90,29 @@ const getSingleGame = async (appID) => {
   }
 };
 
-getSingleGame(359550);
+//5. Get Featured Games when click in top trending:
+
+const getFeaturedGames = async () => {
+  try {
+    const url = "https://cs-steam-api.herokuapp.com/features";
+    const res = await fetch(url);
+    const gamedata = await res.json();
+    console.log("data", gamedata);
+    return gamedata;
+  } catch (err) {
+    console.log("err", err);
+  }
+};
+
+async function featuredGame() {
+  displayTitle.innerHTML = `Featured Games
+  <h4> 10 Featured games by highest differences between positive_ratings and negative_ratings</h4>`;
+  renderGames(await getFeaturedGames());
+}
+
+// Functions to render data to website:
+
+//1. Render games base on input data of get games functions
 
 function renderGames(inputdata) {
   display.innerHTML = "";
@@ -115,6 +140,15 @@ function renderGames(inputdata) {
     })
   );
 }
+
+//Loading all Game when open/refresh page
+const onLoad = async () => {
+  displayTitle.innerHTML = `Gamers Heaven`;
+  renderGames(await getAllGameData());
+};
+onLoad();
+
+// Get data of Genres and render when open/refresh page:
 
 const getAllGenres = async () => {
   try {
@@ -151,6 +185,8 @@ const renderGenres = async () => {
 };
 renderGenres();
 
+//Get data of tags and render when open/refresh page:
+
 const getAllTag = async () => {
   try {
     const url = `https://cs-steam-api.herokuapp.com/steamspy-tags`;
@@ -184,6 +220,9 @@ const renderTag = async () => {
 };
 renderTag();
 
+//Handler functions:
+//1. Click in Genres name:
+
 async function filterByGenres(e) {
   console.log(e);
   inputGenres = e.target.innerText.toLowerCase();
@@ -191,6 +230,7 @@ async function filterByGenres(e) {
   renderGames(await getGameByGenres(inputGenres));
 }
 
+//2. Click in Tag name:
 async function filterByTag(e) {
   console.log(e);
   inputTag = e.target.innerText.toLowerCase();
@@ -198,6 +238,7 @@ async function filterByTag(e) {
   renderGames(await getGameByTag(inputTag));
 }
 
+//3. Search:
 async function searchGame() {
   const inputSearch = document.querySelector("#searchForm");
   displayTitle.innerHTML = `Search: ${inputSearch.value}`;
@@ -208,6 +249,7 @@ async function searchGame() {
 const searchbtn = document.querySelector("#store_search_link");
 searchbtn.addEventListener("click", searchGame);
 
+//4. CLick in any games:
 const renderDetail = (inputdata) => {
   console.log(inputdata);
   display.innerHTML = "";
