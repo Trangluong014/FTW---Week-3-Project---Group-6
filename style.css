@@ -169,7 +169,7 @@ align-self: center;
 display: flex;
 justify-content: center;
 color: rgb(0, 255, 242);
-font-size: 0.8em;
+font-size: 1.2em;
 }
 
 .menu-btn {
@@ -280,6 +280,7 @@ main .show_detail a {
   
 }
 
+
 .show_detail .title {
   display: flex;
   flex-direction: flex-end;
@@ -292,9 +293,10 @@ main .show_detail a {
   font-weight: normal;
   padding: 0;
   align-items:center;
+  
 
 
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 
@@ -346,17 +348,17 @@ main .show_detail a {
   max-height: /* 120px; */50%;
   max-width: /* 400px; */ 100%;
   overflow: hidden;
-  font-size: 0.9em;
+  font-size: 0.7em;
   line-height: 1.6;
   padding: 20 20px;
   word-wrap: break-word;
   text-overflow: ellipsis; 
-  margin-top: 10px;
-
-  transform: translateX(5%); 
+  margin-top: -40px;
+  margin-left: 50px;
+  transform: translateX(50%); 
   transform: translateY(12%); 
 
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   word-wrap: break-word;
@@ -368,7 +370,7 @@ main .show_detail a {
   font-weight: bold;
 }
 .show_detail .game_details .game_informations {
-  font-size: 0.7em;
+  font-size: 0.2em;
   padding: 10px;
   min-width: auto;
   overflow: hidden;
@@ -377,6 +379,7 @@ main .show_detail a {
   color: rgb(79, 211, 221);
   line-height: 15px;
   margin-top: -10px;
+  margin-left: 30px;
   width: 60%;
   display: flex;
   flex-wrap: wrap;
@@ -412,7 +415,7 @@ main .show_detail a {
 
 .show_detail .tags_contain .tags {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
 
   width: 80%;
@@ -427,7 +430,8 @@ main .show_detail a {
 }
 
 .show_detail .tags_contain .tags .tag {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   line-height: /*19px; */ auto;
   padding: 0 7px;
   color: white;
@@ -466,6 +470,13 @@ main .show_detail a {
   margin: 0px auto;
   color: #3498db;
   font-size: 2em;
+}
+
+.li-title {
+  font-size: 0.5em;
+}
+.group-title{
+  font-size: 0.7em;
 }
 .loader {
   border: 16px solid #f3f3f3;
