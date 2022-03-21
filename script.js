@@ -283,12 +283,13 @@ const renderDetail = (inputdata) => {
   displayTitle.innerHTML = `${inputdata.data.name}`;
   const newDiv = document.createElement("div");
   newDiv.innerHTML = `<div class="showing_game show_detail">
-    <p style="background-image: url(${inputdata.data.background});">
     <div class="title_contain ">
     <div class="title">${inputdata.data.name}</div>
     <div class="price">$${inputdata.data.price}</div>
     </div>
-    <div class="img_detail">
+    <div class="img_detail" style="background-image: url(${
+      inputdata.data.background
+    })">
     <img
     src="${inputdata.data.header_image}"
     alt="${inputdata.data.name}"
