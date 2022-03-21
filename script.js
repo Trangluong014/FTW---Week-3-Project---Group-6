@@ -105,8 +105,8 @@ const getFeaturedGames = async () => {
 };
 
 async function featuredGame() {
-  displayTitle.innerHTML = `<h1>Featured Games</h1>
-  <h6> <i>10 Featured games by highest differences between positive_ratings and negative_ratings</i></h6>`;
+  displayTitle.innerHTML = `<h1 class="featured-title">Featured Games</h1>
+  <h6 class="featured-titleh6"> <i>10 Featured games by highest differences between positive_ratings and negative_ratings</i></h6>`;
   renderFeturedGames(await getFeaturedGames());
 }
 

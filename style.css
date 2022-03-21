@@ -478,6 +478,17 @@ main .show_detail a {
 .group-title{
   font-size: 0.7em;
 }
+main .showing_game .game_wrapper .cover .game_info{
+  font-size: 0.5em;
+}
+.featured-title{
+  font-size: 1em;
+}
+
+.featured-titleh6{
+  font-size: 0.5em;
+  margin-bottom: 10px;
+}
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -509,4 +520,4 @@ main .show_detail a {
   100% {
     transform: rotate(360deg);
   }
-}
+};
