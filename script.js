@@ -105,9 +105,9 @@ const getFeaturedGames = async () => {
 };
 
 async function featuredGame() {
-  displayTitle.innerHTML = `Featured Games
-  <h4> 10 Featured games by highest differences between positive_ratings and negative_ratings</h4>`;
-  renderGames(await getFeaturedGames());
+  displayTitle.innerHTML = `<h1>Featured Games</h1>
+  <h6> <i>10 Featured games by highest differences between positive_ratings and negative_ratings</i></h6>`;
+  renderFeturedGames(await getFeaturedGames());
 }
 
 // Functions to render data to website:
@@ -141,6 +141,33 @@ function renderGames(inputdata) {
   );
 }
 
+function renderFeturedGames(inputdata) {
+  display.innerHTML = "";
+
+  inputdata.data.forEach((data, index) => {
+    const newDiv = document.createElement("div");
+
+    newDiv.innerHTML = `<div class="game_wrapper">
+    <div class="cover" id="${data.appid}">
+    <img
+    src="${data.header_image}"
+    />
+    <div class="game_info">
+    <p>${data.name} - Price: $${data.price}</p>
+    <p>Negative rating: ${data.negative_ratings} 
+    </br> Positive rating: ${data.positive_ratings}</p>
+    </div>
+    </div>
+    </div>`;
+    display.appendChild(newDiv);
+  });
+  const gamesCover = document.querySelectorAll(".cover");
+  gamesCover.forEach((gameCover) =>
+    gameCover.addEventListener("click", () => {
+      singleGame(gameCover);
+    })
+  );
+}
 //Loading all Game when open/refresh page
 const onLoad = async () => {
   displayTitle.innerHTML = `Gamers Heaven`;
@@ -256,9 +283,10 @@ const renderDetail = (inputdata) => {
   displayTitle.innerHTML = `${inputdata.data.name}`;
   const newDiv = document.createElement("div");
   newDiv.innerHTML = `<div class="showing_game show_detail">
+    <p style="background-image: url(${inputdata.data.background});">
     <div class="title_contain ">
     <div class="title">${inputdata.data.name}</div>
-    <div class="price">${inputdata.data.price}</div>
+    <div class="price">$${inputdata.data.price}</div>
     </div>
     <div class="img_detail">
     <img
@@ -266,10 +294,16 @@ const renderDetail = (inputdata) => {
     alt="${inputdata.data.name}"
     />
     <div class="game_details">
-    <div class="game_description">${inputdata.data.description}</div>
+    <div class="game_description"><span class="game-description">GAME DESCRIPTION:</span> ${
+      inputdata.data.description
+    }</div>
     <div class="game_informations">
-    <div>RELEASE DATE:  ${inputdata.data.release_date}</div>
-    <div>DEVELOPER:  ${inputdata.data.developer}</div>
+    <div>RELEASE DATE:  ${inputdata.data.release_date} - </div>
+    <div>DEVELOPER:  ${inputdata.data.developer} - </div>
+    <div>MEDIAN PLAYTIME: ${inputdata.data.median_playtime} - </div>
+    <div>NEGATIVE RATING: ${inputdata.data.negative_ratings} - </div>
+    <div>POSITIVE RATING: ${inputdata.data.positive_ratings} - </div>
+    <div>REQUIRED AGE: ${inputdata.data.required_age} - </div>
     </div>
     </div>
     </div>
@@ -277,7 +311,9 @@ const renderDetail = (inputdata) => {
     Popular user-defined tags for this product:
     <div class="tags">
     <div class="tag">${inputdata.data.steamspy_tags
-      .map((item) => '<button class="tag-name">' + item + "</button>")
+      .map(
+        (item) => '<button class="tag-name tag-button">' + item + "</button>"
+      )
       .join("")}</div>
     </div>
     </div>

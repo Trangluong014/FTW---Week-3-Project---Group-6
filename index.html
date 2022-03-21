@@ -7,9 +7,12 @@
     <title>STEAM - Gamers Heaven</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Poppins:ital,wght@0,100;0,200;1,100&family=Roboto+Mono:wght@100&family=Roboto:wght@100;300;400;500&family=Smooch+Sans:wght@200&display=swap"
       rel="stylesheet"
+    />
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -31,14 +34,19 @@
           </a>
         </div>
 
-        <h3 id="displayTitle">Gamers heaven</h3>
+        <h1 id="displayTitle">Gamers heaven</h1>
 
         <div class="nav_links">
           <li>
-            <a onclick="onLoad()" style="text-decoration: none">Home</a>
+            <a onclick="onLoad()" style="text-decoration: none" class="menu-btn"
+              >Home</a
+            >
           </li>
           <li>
-            <a onclick="featuredGame()" style="text-decoration: none"
+            <a
+              onclick="featuredGame()"
+              style="text-decoration: none"
+              class="menu-btn"
               >Trending</a
             >
           </li>
@@ -46,11 +54,15 @@
             <a
               href="https://store.steampowered.com/about/"
               style="text-decoration: none"
+              class="menu-btn"
               >About us</a
             >
           </li>
           <li>
-            <a href="https://steamcommunity.com/" style="text-decoration: none"
+            <a
+              href="https://steamcommunity.com/"
+              style="text-decoration: none"
+              class="menu-btn"
               >Community</a
             >
           </li>
@@ -80,12 +92,12 @@
           </form>
           <div class="category">
             <ul class="categoryGroup" id="category-list">
-              <li class="group-title">BY GENRES</li>
+              <li class="group-title">BROWSE BY GENRE</li>
             </ul>
           </div>
           <div class="category">
             <ul class="categoryGroup" id="tags-list">
-              <li class="group-title">BY TAGS</li>
+              <li class="group-title">BROWSE BY TAG</li>
             </ul>
           </div>
         </div>

@@ -23,10 +23,10 @@ body {
   /* align-items: center; */
   position: relative;
   /* min-height: 100%; */
-  color: black;
+  color: white;
   /* font-size: 12px; */
   background: url(/public/images/v6/colored_body_top.png?v=2) center top
-    no-repeat white;
+    no-repeat rgb(0, 41, 131);
 }
 
 @media only screen and (min-width: 320px) and (max-width: 860px) {…}
@@ -34,18 +34,18 @@ body {
   img {
     border:none;
     max-width: 100%;
-    width: 500px;  // assume this is the default size
+    width: 500px;  
   }
 
   header {
-    background: #a8ff78;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     position: sticky;
     width: 100%;
     top: 0;
-    box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+    box-shadow: 0 0 7px 0 rgba(3, 255, 221, 0.75);
     padding: 1em 0.5em;
     margin-bottom: 1em;
     z-index: 20;
@@ -56,7 +56,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     list-style-type: none;
-   /* 11.13 AM: adjust header */ 
+  
   }
 
 
@@ -92,10 +92,10 @@ div#store_search {
 
 .searchbox {
   background-image: none;
-  background: #0400ff; /* fallback for old browsers */
+  background: #efeff5; /* fallback for old browsers */
  
   border-radius: 5px;
-  border: 1px solid rgba(253, 0, 139, 0.925);
+  border: 1px solid rgba(4, 252, 252, 0.925);
   box-shadow: 1px 1px 0px rgb(255 255 255 / 20%);
   color: #fff;
   margin-bottom: 0px;
@@ -108,7 +108,7 @@ div#store_search {
 .searchbox input {
   border: none;
   background-color: transparent;
-  color: white;
+  color: rgb(17, 16, 16);
   margin-top: 2px;
   margin-left: 8px;
   width: calc(100% - 25px - 8px);
@@ -141,16 +141,16 @@ div#store_search {
 
 main #store_search .category ul {
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: 0.7em;
 
-background: #5433FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #005C97;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   list-style-type: none;
   margin-top: 1em;
   padding-top: 1em;
-  border-top: 2px solid rgba(253, 0, 139, 0.925);
+  border-top: 2px solid rgba(79, 199, 255, 0.925);
   cursor: pointer;
 }
 
@@ -159,17 +159,23 @@ main #store_search .category ul li {
   padding-bottom: /*1em; */ /*4em; */ 2em;
   display: flex;
   position: relative;
-  justify-content: flex-basis;
+  transform: translate(15%);
+  flex-wrap: wrap;
+  
 }
 
 .group-title{
 align-self: center;
 display: flex;
 justify-content: center;
-color: black;
-font-size: larger;
+color: rgb(0, 255, 242);
+font-size: 0.8em;
 }
 
+.menu-btn {
+  text-decoration: none;
+  color: white;
+}
 main #store_search .category li:hover {
   filter: brightness(300%);
   border-radius: 4px;
@@ -180,15 +186,17 @@ main .showing_game {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-
-  height: auto;
+  align-items: right;
+  
 }
 
 main .showing_game .game_wrapper {
   /* width: 270px; */
-  width: 75%;
+  width: 85%;
   
-  border: 1px solid rgba(253, 0, 139, 0.925);
+  
+  
+  border: 1px solid rgba(0, 81, 255, 0.925);
   display: flex; 
   
   
@@ -224,16 +232,17 @@ main .showing_game .game_wrapper .cover .game_info {
   display: flex;
   justify-content: space-evenly;
   font-family: "Motiva Sans", Sans-serif;
+  color: white;
   font-size: 0.9em;
 
-  background: #11998e;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #005C97;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   height: 45px;
   align-items: center;
   word-wrap: normal;
-  
+  font-style: italic;
 }
 
 main .showing_game .game_wrapper .cover .game_info p {
@@ -246,14 +255,14 @@ main .showing_game .game_wrapper .cover .game_info p {
   
   
   padding: 5px;
-  color: blue;
+  color: white;
 }
 
 main .show_detail {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  color: blue;
+  color: white;
 
 
   flex-direction: column;
@@ -262,7 +271,7 @@ main .show_detail {
 
 main .show_detail a {
 
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   text-decoration: none;
@@ -274,11 +283,11 @@ main .show_detail a {
 .show_detail .title {
   display: flex;
   flex-direction: flex-end;
-  color: blue;
+  color: rgb(0, 255, 255);
   /*do not change font fam, font size, somehow it will mess up */
   font-family: Motiva Sans, Arial, Helvetica, sans-serif;
   font-size: 1.7em;
-  line-height: 32px;
+  line-height: 50px;
   text-overflow: ellipsis;
   font-weight: normal;
   padding: 0;
@@ -292,11 +301,11 @@ main .show_detail a {
 }
 
 .show_detail .price {
-  color: #002336;
+  color: rgb(0, 255, 255);
   padding: 0 6px;
   display: inline-block;
   padding: 0 3px;
-  line-height: 17px;
+  line-height: 40px;
 
   width: 80%;
   display: flex;
@@ -311,21 +320,24 @@ main .show_detail a {
   align-items: center;
   padding-bottom: 1px;
   margin: 0px auto;
-  padding: 16px;
+  padding: 12px;
   margin-bottom: 8px;
-  margin-top: 10px;
+  margin-top: 8px;
   
-  color: blue;
+  color: white;
+  justify-content: center;
 
-background: rgba(1, 4, 194, 0.911);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
   width: 80%;
+  height: 500px;
  /* display: flex; */
  display: flex;
  flex-direction: flex-end;
  flex-wrap: wrap;
+ 
 
 
 }
@@ -334,49 +346,55 @@ background: linear-gradient(to top, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ 
   max-height: /* 120px; */50%;
   max-width: /* 400px; */ 100%;
   overflow: hidden;
-  font-size: 0.5em;
-  line-height: 15px;
-  padding: 0 16px;
+  font-size: 0.9em;
+  line-height: 1.6;
+  padding: 20 20px;
   word-wrap: break-word;
   text-overflow: ellipsis; 
+  margin-top: 10px;
 
- /* transform: translateX(30%); 
-  transform: translateY(30%); */
+  transform: translateX(5%); 
+  transform: translateY(12%); 
 
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   word-wrap: break-word;
+  font-family: 'Poppins', sans-serif;
 
 }
-
+.game-description{
+  color: black;
+  font-weight: bold;
+}
 .show_detail .game_details .game_informations {
-  font-size: 0.5em;
-  
+  font-size: 0.7em;
   padding: 10px;
-  min-width: 80px;
+  min-width: auto;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: white;
-  line-height: 20px;
-
+  color: rgb(79, 211, 221);
+  line-height: 15px;
+  margin-top: -10px;
   width: 60%;
   display: flex;
   flex-wrap: wrap;
   word-wrap: break-word;
 
-  
-  transform: translateY(20%);
-
+ 
+  transform: translateY(40%); 
 }
 
+.show_detail .game_details .game_informations div {
+ margin-right: 10px;
+}
 .show_detail .tags_contain {
-background: rgb(0, 40, 105);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  font-size: 0.5em;
+  background: #005C97;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  font-size: 1em;
   padding: 16px;
 
   height: auto;
@@ -401,8 +419,10 @@ background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, 
   display: flex;
   flex-wrap: wrap;
  
-  transform: translateX(15%);
- 
+  transform: translateY(30%);
+  transform: translateX(10%);
+  
+  color: white;
  
 }
 
@@ -411,7 +431,7 @@ background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, 
   line-height: /*19px; */ auto;
   padding: 0 7px;
   color: white;
-  background-color: rgb(23, 243, 225);
+  background-color: transparent;
   border-radius: 2px;
   cursor: pointer;
   margin: 5px;
@@ -429,11 +449,18 @@ background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, 
   flex-wrap: none;
   align-items:center;
 
+  transform: translateY(30%);
   
 
 
 }
 
+.tag-button{
+  margin-right: 5px;
+  background-color: antiquewhite;
+  border: 1px solid black;
+  padding: 3px;
+}
 .error {
   padding: 20px;
   margin: 0px auto;
@@ -443,7 +470,7 @@ background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, 
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #06eb93c9;
+  border-top: 16px solid #0004ffc9;
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
@@ -472,4 +499,5 @@ background: linear-gradient(to top, rgb(0, 94, 202), #4364F7, #0052D4); /* W3C, 
     transform: rotate(360deg);
   }
 }
+
 
