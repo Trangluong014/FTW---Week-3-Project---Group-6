@@ -1,7 +1,7 @@
 let loading = false;
 let inputGenres = "";
 let inputTag = "";
-let baseURL = "https://cs-steam-api.herokuapp.com/games?limit=48";
+let baseURL = "https://cs-steam-api.herokuapp.com/games?limit=33";
 const display = document.querySelector("#display");
 const displayTitle = document.querySelector("#displayTitle");
 
